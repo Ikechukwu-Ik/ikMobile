@@ -1,0 +1,288 @@
+
+
+body {
+	background: cornsilk; //rgb(65, 71, 97);
+	//color: white;
+	font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+	height: 90px;
+	width: 100%;
+	background: white;
+}
+
+.navbar div {
+	display: inline-block;
+	margin: 0px 70px;
+	//padding: 5px;
+	position: absolute;
+}
+
+.navbar .logo {
+	width: 70px;
+	height: 70px;
+	margin-top: 10px;
+	margin-left: 11px;
+	border-radius: 80px;
+	border: 3px solid darkorange;
+	//box-shadow: 0 0px 25px black;
+	position: absolute;
+	top: 50%;
+	//transform: translateY(-50%);
+}
+
+.navbar ul {
+	position: absolute;
+	right: 70px;
+}
+
+.navbar ul li {
+	display: inline-block;
+}
+
+.navbar ul li a {
+	padding: 25px;
+	color: black;
+	text-decoration: none;
+	transition: 0.7s ease;
+	font-weight: bold;
+}
+
+.navbar ul li a:hover {
+	color: darkorange;
+	text-decoration: underline;
+}
+
+.main-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 5rem;
+	height: 70%;
+}
+
+.main-content .text-content h1 {
+	font-size: 45px;
+	font-weight: bolder;
+	line-height: 1.5em;
+}
+
+.typing {
+	font-size: 1.2em;
+	font-weight: bolder;
+	//text-transform: uppercase;
+
+	white-space: nowrap;
+  	overflow: hidden;
+  	animation: typing 6s steps(20, end) infinite, /* 20 = number of characters */
+             						   blink 0.7s step-end infinite;
+}
+
+/* Typing + pause + deleting */
+@keyframes typing {
+  0%   { width: 0ch; }
+  40%  { width: 20ch; }  /* fully typed */
+  60%  { width: 20ch; }  /* pause */
+  100% { width: 0ch; }   /* erase */
+}
+
+/* Cursor blink */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+
+
+
+.main-content .text-content p {
+	width: 85%;
+	font-weight: 400;
+	line-height: 1.4em;
+	text-align: justify;
+}
+
+
+.main-content .image-content {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.main-content .image-content img {
+	max-width: 285px;
+	border-radius: 43px;
+	//border: 3px solid white;
+	box-shadow: 0 0px 25px black; //rgb(120, 120, 120);
+}
+
+.demo-btn {
+	background: darkorange; //transparent;
+	border: 2px solid darkorange;
+	border-radius: 30px;
+	color: black;
+	padding: 10px 20px;
+	font-weight: bold;
+	font-size: 14px;
+	text-decoration: none;
+	transition: 0.5s ease;
+	display: inline-block;
+	margin-right: 30px;
+	margin-bottom: 20px;
+	box-shadow: 0 0px 25px black;
+}
+.demo-btn2 {
+	background: transparent;
+	border: 2px solid darkorange;
+	border-radius: 30px;
+	color: black;
+	padding: 10px 20px;
+	font-weight: bold;
+	font-size: 14px;
+	text-decoration: none;
+	transition: 0.5s ease;
+	display: inline-block;
+	margin-right: 30px;
+	margin-bottom: 5px;
+	box-shadow: 0 0px 25px black;
+}
+
+.demo-btn, .demo-btn2:hover{
+	background: darkorange;
+	color: black;
+}
+
+.animate-text {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.animate-text:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.animate-text:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.animate-text:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.animate-text:nth-child(4) {
+    animation-delay: 2s;
+}
+
+.animate-text:nth-child(4) {
+    animation-delay: 2.5s;
+}
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+@media (max-width: 800px) {
+
+	.navbar div {
+		display: inline-block;
+		margin: 0px 20px;
+		padding: 5px;
+		position: absolute;
+	}
+
+
+	.navbar .logo {
+		width: 60px;
+		height: 60px;
+		margin-left: 20px;
+	}
+
+	.navbar .toggle-menu {
+		width: 35px;
+		height: 35px;
+		background: url(../images/menu2.png);
+		background-repeat: no-repeat;
+		background-position: bottom;
+		background-size: 30px;
+		right: 0;
+		cursor: pointer;
+	}
+
+	.navbar .toggle-menu.active {
+		width: 40px;
+		height: 40px;
+		background: url(../images/close.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 30px;
+		cursor: pointer;
+		filter: invert(1);
+		//z-index: 1;
+	}
+
+
+	.navbar ul {
+		right: 0;
+		top: 0;
+		min-width: 100%;
+		height: 100%;
+		background: white;
+		margin-top: 0px;
+
+		display:  none;
+		flex-direction: column;
+	    align-items: center;    
+	    justify-content: center;
+	    text-align: center;
+	    line-height: 3em;
+	    transition: .7s ease;
+	}
+
+	.navbar ul.active {
+		display:  flex;
+		z-index: 1;
+	}
+
+	.navbar ul li a {
+		color: #111;
+		font-weight: bold;
+	}
+
+
+	.main-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 3rem;
+	}
+
+	.typing {
+		font-size: 19px;
+		font-weight: bolder;
+		line-height: 1.5em;
+	}
+	.main-content .text-content p {
+		width: 98%;
+	}
+
+	.main-content .image-content {
+		margin-top: 20px;
+		margin-bottom: 50px;
+		justify-content: flex-start;
+	}
+
+	.main-content .image-content img {
+		max-width: 220px;
+	}
+
+
+}
