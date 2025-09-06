@@ -214,6 +214,7 @@ body {
 		background-size: 30px;
 		right: 0;
 		cursor: pointer;
+		transform: translateY(30px);
 	}
 
 	.navbar .toggle-menu.active {
@@ -283,6 +284,7 @@ body {
 	.main-content .image-content img {
 		max-width: 220px;
 	}
+
 
 
 }
